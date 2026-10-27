@@ -13,7 +13,7 @@ HydroScan-E20 is a student prototype exploring capacitive sensing and live telem
 
 ## Repository contents
 
-- `HydroScan_E20_PlanA1_A2.ino` — ESP32 firmware.
+- `HydroScan_E20.ino` — ESP32 firmware.
 - `data/index.html` — dashboard HTML.
 - `data/style.css` — dashboard styles.
 - `data/app.js` — dashboard behavior and API requests.
@@ -34,7 +34,7 @@ Verify this mapping against the actual wiring before powering the prototype.
 ## Arduino IDE setup
 
 1. Install Arduino IDE and ESP32 board support by Espressif Systems.
-2. Open `HydroScan_E20_PlanA1_A2.ino` from this folder.
+2. Open `HydroScan_E20.ino` from this folder.
 3. Install the libraries used by the sketch: ProtoCentral FDC2214 library, OneWire, DallasTemperature, Adafruit GFX Library, and Adafruit SSD1306. Library names and compatibility can vary; use the library required by the include statements in the source.
 4. Select the appropriate ESP32 board and COM/serial port.
 5. Compile and upload the sketch.
@@ -57,7 +57,7 @@ The report contains the recorded cumulative-addition readings and discusses thei
 ## Team contributions
 
 - Abhay Patil — hardware and firmware.
-- Arjun Jagadish — firmware and CAD design, including PETG capacitive-probe holder and enclosure.
+- Arjun Jagadish — firmware and CAD design, (including PETG capacitive-probe holder and enclosure.)
 - Sai Satya Sujal Sabbavarapu — dashboard and documentation.
 - All team members — calibration and presentation collaboratively.
 
