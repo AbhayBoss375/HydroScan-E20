@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HydroScan-E20 | Live Demo Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><p class="eyebrow">ESP32 SENSOR PROTOTYPE</p><h1>HydroScan-E20</h1><p class="subtitle">Capacitive sensing · temperature · analog sensor</p></div>
+    <div class="live-pill"><span class="dot"></span><span id="connection">Connecting…</span></div>
+  </header>
+  <main>
+    <section class="notice"><strong>Prototype / demo mode</strong><p>Water estimate is endpoint-only and not a validated fuel-water concentration. The FDC alert is a preliminary reference-threshold indication based on one non-monotonic calibration run, not confirmed contamination. The turbidity-window alert is also provisional. This prototype does not certify fuel safety or confirm phase separation.</p></section>
+    <section class="section-head"><div><p class="eyebrow">LIVE TELEMETRY</p><h2>Sensor readings</h2></div><span id="updated">Waiting for first reading</span></section>
+    <section class="metrics">
+      <article class="metric"><span class="metric-label">Nominal endpoint estimate</span><div class="metric-value" id="waterPercent">—</div><p id="waterNote">Awaiting stable readings</p></article>
+      <article class="metric"><span class="metric-label">FDC2214 average (32)</span><div class="metric-value compact" id="fdcAvg">—</div><p id="fdcRange">Not calibrated</p></article>
+      <article class="metric"><span class="metric-label">Analog sensor voltage</span><div class="metric-value" id="turbV">—</div><p id="turbRaw">ADC: —</p></article>
+      <article class="metric"><span class="metric-label">Temperature</span><div class="metric-value" id="temperature">—</div><p>DS18B20</p></article>
+    </section>
+    <section class="status-card">
+      <div><p class="eyebrow">ALERT STATUS</p><h2 id="alertTitle">Monitoring</h2><p id="alertDescription">No threshold alert active. Absence of an alert does not prove the fuel is uncontaminated.</p></div>
+      <span id="alertBadge" class="badge neutral">NO ALERT</span>
+    </section>
+    <section class="controls">
+      <div><p class="eyebrow">PLAN A1</p><h2>Live sensor mode</h2><p>The firmware can trigger if the analog voltage remains inside the provisional water-like window for three consecutive readings. It is not expected to reliably identify water in E20 based on current tests.</p></div>
+      <div class="control-note">Live sensor readings are always displayed above. Do not treat a missing alert as proof that the fuel is uncontaminated.</div>
+    </section>
+    <details><summary>System health and interpretation</summary><ul id="healthList"><li>Reading system status…</li></ul><p class="fineprint">Turbidity ADC counts are raw counts, not NTU. FDC raw counts are not pF. The displayed percentage is not a validated quantitative measurement.</p></details>
+  </main>
+  <footer>HydroScan-E20 · Student prototype · For demonstration and research only</footer>
+  <script src="/app.js"></script>
+</body>
+</html>
