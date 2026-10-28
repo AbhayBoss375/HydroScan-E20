@@ -4,12 +4,17 @@ HydroScan-E20 is a student prototype exploring capacitive sensing and live telem
 
 ## Project status and limitations
 
-- This is an educational proof-of-concept, not a certified fuel-quality instrument.
-- The recorded FDC2214 response was non-monotonic at intermediate water additions. The available data do **not** validate a continuous water-percentage estimate or a reliable E20 contamination threshold.
-- The turbidity readings recorded for dry E20 and E20 with 1.0 mL added water overlapped substantially.
-- The firmware's sensor-window alert is provisional and is not proof of water contamination or phase separation.
-- The manual dashboard Trigger/Clear demo override and its firmware routes have been removed. The remaining alert is activated only by the configured provisional sensor-window rule; it is not proof of water contamination or phase separation.
-- Do not operate ordinary hobby electronics near open petrol/E20 or fuel vapour. Use a non-flammable liquid for bench demonstrations. Real fuel testing requires an approved, appropriately equipped laboratory procedure.
+## Project Status and Limitations
+
+- **Successful capacitive sensing demonstration:** The FDC2214 registered measurable changes during the cumulative water-addition experiment. The recorded average decreased from **12,239,751.42 counts for dry E20 to 12,215,497.90 counts after adding 1.0 mL of water**, demonstrating that the capacitive sensing system responded to changes in the sample conditions.
+- **Capacitance response:** The decrease in FDC2214 output is consistent with a change in the effective capacitance of the sensing arrangement as the sample's dielectric properties changed. The exact contribution of bulk capacitance and other experimental factors requires further controlled investigation.
+- **Calibration limitations:** Although the readings decreased overall between the dry baseline and the 1.0 mL endpoint, intermediate readings were non-monotonic. The available data do not establish a reliable continuous water-percentage calibration or a validated contamination threshold.
+- **Supplementary turbidity sensing:** The recorded turbidity readings for dry E20 and E20 with 1.0 mL of added water overlapped substantially. Consequently, the available measurements did not demonstrate clear discrimination between these two conditions using turbidity alone.
+- **Alert functionality:** The firmware includes a provisional sensor-threshold alert intended to flag readings that cross the configured reference boundary. This provides a preliminary indication of a sensor response, but it is not a validated determination of water contamination.
+- **Phase separation:** The available experimental records do not establish that visible phase separation occurred after adding 1.0 mL of water. The sensor response should not be interpreted as proof of phase separation.
+- **System demonstration:** HydroScan-E20 integrates the FDC2214 capacitive sensor, ESP32-based data acquisition, temperature and turbidity measurements, local display indicators, and a live web dashboard. The project demonstrates the integration of these components into a functional educational prototype.
+- **Safety and intended use:** HydroScan-E20 is an educational proof-of-concept, not a certified fuel-quality instrument. Ordinary hobby electronics must not be operated near open petrol/E20 or fuel vapour. Testing with real fuel requires an approved laboratory procedure and appropriate safety controls.
+
 
 ## Repository contents
 
